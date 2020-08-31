@@ -1,0 +1,14 @@
+[{
+    "id": 1,
+    "firstName": "Marin",
+    "lastName": "Maréchal",
+    "avatar": "marin_bg.png",
+    "alt": "La perrita bomba"
+},
+{
+    "id": 2,
+    "firstName": "Philippe",
+    "lastName": "Doreau",
+    "avatar": "philou.jpg",
+    "alt": "VueJS will rule the world"
+}]
