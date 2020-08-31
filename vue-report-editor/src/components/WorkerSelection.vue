@@ -6,26 +6,25 @@
           </div>
       </div>
       <div class="row mt-4">
-          <app-worker
+          <worker
                 v-for="worker in workers"
-                :worker="worker" :key="worker"></app-worker>
+                :worker="worker" :key="worker.id"></worker>
       </div>
     
   </div>
 </template>
 
 <script>
-    import Worker from './Worker.vue'
-    import workers from '../database/workers.json'
+    import Worker from './Worker'
 
     export default {
-        data: function(){
-            return {
-                workers
-            }
-        },
         components: {
-            appWorker: Worker
+            Worker
+        },
+        computed: {
+            workers(){
+                return this.$store.state.workers
+            }
         }
     }
 

@@ -2,20 +2,23 @@
   <div class="mainContainer">
     <div class="row align-items-center justify-content-center">
       <div class="col-lg-6">
-        <app-worker-selection></app-worker-selection>
+        <worker-selection v-if="!$store.state.selectedWorker" :workers="$store.state.workers"></worker-selection>
+        <transition></transition>
       </div>  
     </div>
   </div>
 </template>
 
 <script>
-    import Issues from './components/Issues.vue';
-    import WorkerSelection from './components/WorkerSelection.vue';
+    import Issues from './components/Issues';
+    import WorkerSelection from './components/WorkerSelection';
+    import Transition from './components/Transition';
 
     export default {
         components: {
-            appIssues: Issues,
-            appWorkerSelection: WorkerSelection
+            Issues,
+            WorkerSelection,
+            Transition
         }
     }
 </script>

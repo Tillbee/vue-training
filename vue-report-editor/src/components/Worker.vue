@@ -1,20 +1,8 @@
 <template>
-   <div class="col-sm-4 col-md-4 col-lg-2 col-2" @click="selectWorker">
+   <div class="col-sm-4 col-md-4 col-lg-2 col-2" @click="selectWorker(worker)">
        <div class="row">
            <div class="col-12">
                <img :src="require(`../assets/${worker.avatar}`)" :alt="worker.alt">
-           </div>
-           <div v-if="isWorkerSelected" class="col-6">
-               <div class="row">
-                    <div class="col-12">
-                        <h3>{{worker.firstName}} <span>{{worker.lastName.toUpperCase()}}</span></h3>
-                    </div>
-               </div>
-               <div class="row">
-                    <div class="col-12">
-                        <p>Prepare your tasks  !!!</p>
-                    </div>
-               </div>
            </div>
        </div>
        
@@ -23,15 +11,12 @@
 
 <script>
     export default {
-        data: function(){
-            return {
-                isWorkerSelected: false
-            }
+        props: {
+            worker: Object
         },
-        props: ['worker'],
         methods: {
-            selectWorker: function(){
-                this.isWorkerSelected = true;
+            selectWorker: function(worker){
+                this.$store.commit('setWorker', worker)
             }
         }
     }

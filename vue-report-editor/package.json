@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "fs": "0.0.1-security",
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "vuex": "^3.5.1"
   },
   "browserslist": [
     "> 1%",
