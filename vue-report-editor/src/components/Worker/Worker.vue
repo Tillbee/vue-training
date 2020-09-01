@@ -2,7 +2,7 @@
    <div class="col-sm-4 col-md-4 col-lg-2 col-2" @click="selectWorker(worker)">
        <div class="row">
            <div class="col-12">
-               <img :src="require(`../assets/${worker.avatar}`)" :alt="worker.alt">
+               <img class="img-fluid" :src="require(`../../assets/${worker.avatar}`)" :alt="worker.alt">
            </div>
        </div>
        
@@ -10,14 +10,16 @@
 </template>
 
 <script>
+    import { mapState, mapActions } from 'vuex'
+
     export default {
         props: {
             worker: Object
         },
         methods: {
-            selectWorker: function(worker){
-                this.$store.commit('setWorker', worker)
-            }
+            ...mapActions('workers', [
+                'selectWorker'
+            ])
         }
     }
 </script>

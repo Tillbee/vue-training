@@ -5,8 +5,6 @@
 </template>
 
 <script>
-    //import { serverBus } from '../../main';
-
     export default {
         props: ['issue'],
         methods: {

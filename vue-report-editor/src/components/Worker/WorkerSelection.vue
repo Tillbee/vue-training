@@ -16,15 +16,19 @@
 
 <script>
     import Worker from './Worker'
+    import { mapState, mapActions } from 'vuex'
 
     export default {
         components: {
             Worker
         },
         computed: {
-            workers(){
-                return this.$store.state.workers
-            }
+            ...mapState({
+                workers: state => state.workers.all,
+            })
+        },
+        created () {
+            this.$store.dispatch('workers/getAllWorkers')
         }
     }
 
