@@ -16,6 +16,10 @@ const actions = {
   },
   selectWorker ({commit}, worker) {
     commit('setSelected', worker)
+    this.dispatch('global/setActiveComponent', 'Transition')
+    setTimeout(() => {
+        this.dispatch('global/setActiveComponent', 'Form')
+    }, 1500)
   }
 }
 

@@ -1,16 +1,17 @@
 <template>
-  <div class="selection">
-      <div class="row">
-          <div class= "col">
-              <h1>Choose your <span>character</span> :</h1>
-          </div>
-      </div>
-      <div class="row mt-4">
-          <worker
-                v-for="worker in workers"
-                :worker="worker" :key="worker.id"></worker>
-      </div>
-    
+  <div class="row selection">
+      <div class="col">
+         <div class="row">
+            <div class= "col">
+                <h1>Choose your <span>character</span> :</h1>
+            </div>
+         </div>
+        <div class="row mt-4">
+            <worker
+                    v-for="worker in workers"
+                    :worker="worker" :key="worker.id"></worker>
+        </div>
+      </div> 
   </div>
 </template>
 
