@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import Worker from './Worker'
+    import Worker from '@/components/Worker/Worker'
     import { mapState, mapActions } from 'vuex'
 
     export default {
@@ -24,11 +24,12 @@
             Worker
         },
         computed: {
-            ...mapState({
-                workers: state => state.workers.all,
+            ...mapState('workers', {
+                workers: state => state.all
             })
         },
         created () {
+            this.$store.dispatch('workers/resetSelectedWorker')
             this.$store.dispatch('workers/getAllWorkers')
         }
     }

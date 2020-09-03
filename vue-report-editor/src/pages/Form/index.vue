@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import Issues from '../Issue/Issues'
+    import Issues from '@/components/Issue/Issues'
 
     export default {
         components: {

@@ -27,9 +27,14 @@
 
     export default {
         computed: {
-            ...mapState({
-                selectedWorker: state => state.workers.selected,
+            ...mapState('workers', {
+                selectedWorker: state => state.selected,
             })
+        },
+        mounted (){
+            setTimeout(() => {
+                this.$router.push('form')
+            },1500)
         }
     }
 

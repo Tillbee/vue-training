@@ -4,22 +4,22 @@
            <div class="col-12">
                <img class="img-fluid" :src="require(`../../assets/${worker.avatar}`)" :alt="worker.alt">
            </div>
-       </div>
-       
+       </div>     
    </div>
 </template>
 
 <script>
-    import { mapState, mapActions } from 'vuex'
+    import { mapState, mapActions, mapGetters } from 'vuex'
 
     export default {
         props: {
             worker: Object
         },
         methods: {
-            ...mapActions('workers', [
-                'selectWorker'
-            ])
+            selectWorker(worker){
+                this.$store.dispatch('workers/selectWorker', worker)
+                this.$router.push('transition');
+            }
         }
     }
 </script>
