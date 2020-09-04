@@ -1,8 +1,18 @@
 <template>
     <div class="row notFound">
-      <div class="col">
-          <h2>Ooooooops ! It seems you're tying to access to the <span>secret area</span></h2>
-      </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <GoBackButton/>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <h2>Ooooooops ! It seems you're tying to access to the <span>secret area</span></h2>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </template>
 

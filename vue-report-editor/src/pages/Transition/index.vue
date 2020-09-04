@@ -34,7 +34,7 @@
         mounted (){
             setTimeout(() => {
                 this.$router.push('form')
-            },1500)
+            }, 2000)
         }
     }
 
