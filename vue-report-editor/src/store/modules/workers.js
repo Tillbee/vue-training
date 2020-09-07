@@ -1,4 +1,4 @@
-import workers from '../../database/workers.json';
+import workers from '@/database/workers.json';
 
 // initial state
 const state = () => ({

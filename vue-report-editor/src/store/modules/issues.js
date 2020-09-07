@@ -1,4 +1,4 @@
-import workers from '../../database/workers.json';
+import issues from '@/database/issues';
 
 // initial state
 const state = () => ({
@@ -6,12 +6,16 @@ const state = () => ({
 })
 
 // getters
-const getters = {}
+const getters = {
+  getIssuesByUserId: (state) => (id) => {
+    return state.all.filter(issue => issue.assignee === id)
+  }
+}
 
 // actions
 const actions = {
   getAllIssues ({commit}) {
-    commit('setIssues', workers)
+    commit('setIssues', issues)
   }
 }
 

@@ -25,7 +25,7 @@
         },
         computed: {
             ...mapState('workers', {
-                workers: state => state.all
+                workers: 'all'
             })
         },
         created () {

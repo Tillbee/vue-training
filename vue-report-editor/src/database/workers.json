@@ -1,12 +1,12 @@
 [{
-    "id": 1,
+    "id": "m.marechal",
     "firstName": "Marin",
     "lastName": "Maréchal",
     "avatar": "marin_bg.png",
     "alt": "La perrita bomba"
 },
 {
-    "id": 2,
+    "id": "p.doreau",
     "firstName": "Philippe",
     "lastName": "Doreau",
     "avatar": "philou.jpg",

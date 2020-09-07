@@ -28,7 +28,7 @@
     export default {
         computed: {
             ...mapState('workers', {
-                selectedWorker: state => state.selected,
+                selectedWorker: 'selected',
             })
         },
         mounted (){

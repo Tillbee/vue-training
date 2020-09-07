@@ -23,7 +23,7 @@
 
 <style lang="scss" scoped>
     .row.content {
-        height: 75%;
+        height: 100%;
     }
     .slide-enter-active,
     .slide-leave-active{
