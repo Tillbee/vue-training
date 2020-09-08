@@ -2,7 +2,7 @@
   <div class="row transition">
       <div class="col">
           <div class="row align-items-center">
-            <div class="col-4">
+            <div class="col-4 text-right">
                 <img class="img-fluid" :src="require(`../../assets/${selectedWorker.avatar}`)" :alt="selectedWorker.alt">
             </div>
             <div class= "col-8">

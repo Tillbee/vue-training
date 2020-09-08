@@ -1,14 +1,28 @@
 [{
+    "id": "jc.gonzalezcamacho",
+    "firstName": "Juan Carlos",
+    "lastName": "Gonzalez Camacho",
+    "avatar": "juan.png",
+    "alt": "La perrita bomba"
+},
+{
+    "id": "r.laforest",
+    "firstName": "Rony",
+    "lastName": "Laforest",
+    "avatar": "rony.jpg",
+    "alt": "La carne famosa"
+},
+{
     "id": "m.marechal",
     "firstName": "Marin",
     "lastName": "Maréchal",
-    "avatar": "marin_bg.png",
-    "alt": "La perrita bomba"
+    "avatar": "marin.png",
+    "alt": "Mister Tinder"
 },
 {
     "id": "p.doreau",
     "firstName": "Philippe",
     "lastName": "Doreau",
     "avatar": "philou.jpg",
-    "alt": "VueJS will rule the world"
+    "alt": "VueJS First Contributer"
 }]

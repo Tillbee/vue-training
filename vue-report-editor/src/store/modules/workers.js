@@ -7,7 +7,11 @@ const state = () => ({
 })
 
 // getters
-const getters = {}
+const getters = {
+  fullName: state => {
+    return state.selected.firstName + ' ' + state.selected.lastName
+  }
+}
 
 // actions
 const actions = {

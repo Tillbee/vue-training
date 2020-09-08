@@ -20,7 +20,7 @@
         data(){
             return{
                 isSelected: false,
-                baseHref: 'https://jira.criteois.com/browse/'
+                processing: false
             }
         },
         props: {
@@ -28,15 +28,18 @@
         },
         computed: {
             issueHref(){
-                return this.baseHref + this.issue.key
+                return this.$store.state.issues.baseHref + this.issue.key
             }
         },
         methods: {
             toggleSelect(issue) {
-                if(!event.target.classList.contains("issue-key")){
-                    this.isSelected = !this.isSelected
+                if(!event.target.classList.contains("issue-key") || !!this.processing){
+                    this.processing = true
+                    this.$store.dispatch('issues/toggleSelectedIssue', issue).then((wasSelected) => {
+                        this.isSelected = !wasSelected
+                        this.processing = false
+                    })
                 }
-                //serverBus.$emit('serverSelected', this.server);
             }
         }
     }
@@ -55,6 +58,12 @@
         border-radius: 2px;
         margin: 5px;
         padding: 10px;
+    }
+    .issue:first-child{
+        margin-top: 0px
+    }
+    .issue:last-child{
+        margin-bottom: 0px
     }
     .issue-key{
         color: #5e6c84;

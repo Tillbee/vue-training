@@ -55,6 +55,15 @@
                         'message': 'Please provide your lowlights'
                     })
                 }
+
+                if(this.$store.state.report.errors.length === 0){
+                    let recepient = 'q.bricquir@criteo.com';
+                    let date = new Date();
+                    let fullDate = date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear()
+                    let subject = 'Weekly Report - ' + this.$store.getters['workers/fullName'] + ' - ' + fullDate;
+                    location.href = 'mailto:' + recepient + '?subject=' + subject;
+                    //mailto:nullepart@mozilla.org?subject=Demande%20inscription%20newsletter&body=Inscrivez-moi%20%C3%A0%20votre%20newsletter%20%21%0D%0A%0D%0ANom%20complet%20%3A%0D%0A%0D%0AO%C3%B9%20avez-vous%20entendu%20parler%20de%20nous%20%3F
+                }
             }
         }
     }
