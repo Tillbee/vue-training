@@ -16,6 +16,9 @@ const getters = {
   getSelectedIssueByKey: (state) => (key) => {
     return state.selectedIssues.filter(issue => issue.key === key)
   },
+  getCustomIssues: (state) => {
+    return state.selectedIssues.filter(issue => issue.isCustom)
+  },
 }
 
 // actions
@@ -27,17 +30,6 @@ const actions = {
     let wasSelected = getters.getSelectedIssueByKey(issue.key).length > 0
     !wasSelected ? commit('addSelectedIssue', issue) : commit('removeSelectedIssue', issue)
     return wasSelected
-  },
-  addCustomIssue ({commit, state}, customIssue) {
-    if(!state.customIssues.includes(customIssue)){
-      commit('addCustomIssue', customIssue)
-    }
-  },
-  removeCustomIssue ({commit}, customIssue) {
-    commit('removeCustomIssue', customIssue)
-  },
-  removeAllCustomIssue ({commit}) {
-    commit('removeAllCustomIssue')
   },
 }
 
@@ -52,16 +44,6 @@ const mutations = {
   removeSelectedIssue (state, issue) {
     let selectedIssueIndex = state.selectedIssues.indexOf(issue);
     state.selectedIssues.splice(selectedIssueIndex, 1);
-  },
-  addCustomIssue (state, customIssue) {
-    state.customIssues.push(customIssue)
-  },
-  removeCustomIssue (state, customIssue) {
-    let customIssueIndex = state.customIssues.indexOf(customIssue);
-    state.customIssues.splice(customIssueIndex, 1);
-  },
-  removeAllCustomIssue (state) {
-    state.customIssues = []
   },
 }
 

@@ -1,9 +1,9 @@
 <template>
     <div class="custom-issue">
         <a class="custom-issue-key" target="_blank" :href="customIssueHref">
-            CCDI-{{customIssue}}
+            {{customIssue.key}}
         </a>
-        <span @click="removeCustomIssue(customIssue)" class="closeIssue" aria-label="Close">
+        <span @click="toggleSelectedIssue(customIssue)" class="closeIssue" aria-label="Close">
            x
         </span>
     </div>
@@ -13,14 +13,14 @@
 import { mapActions } from 'vuex'
 export default {
     props: {
-        customIssue: String
+        customIssue: Object
     },
     methods: {
-        ...mapActions('issues', ['removeCustomIssue'])
+        ...mapActions('issues', ['toggleSelectedIssue'])
     },
     computed: {
         customIssueHref(){
-            return this.$store.state.issues.baseHref + this.customIssue
+            return this.$store.state.issues.baseHref + this.customIssue.key
         }
     }
 }

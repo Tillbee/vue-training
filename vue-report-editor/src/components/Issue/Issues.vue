@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-auto">
                         <div class="issues-background">
-                            <custom-issue v-for="customIssue in customIssues" :customIssue="customIssue" :key="customIssue"></custom-issue>
+                            <custom-issue v-for="customIssue in customIssues" :customIssue="customIssue" :key="customIssue.key"></custom-issue>
                         </div>
                     </div>
                 </div>
@@ -50,13 +50,14 @@
             addCustomIssue(event){
                 let customIssueValue = event.target.value
                 if(customIssueValue !== ''){
-                    this.$store.dispatch('issues/addCustomIssue', customIssueValue);
+                    this.$store.dispatch('issues/toggleSelectedIssue', {'key': 'CCDI-' + customIssueValue, 'isCustom': true});
                 }
+                event.target.value = ''
             }
         },
         computed: {
             customIssues(){
-                return this.$store.state.issues.customIssues
+                return this.$store.getters['issues/getCustomIssues']
             },
             userIssues(){
                 return this.$store.getters['issues/getIssuesByUserId'](this.$store.state.workers.selected.id)
