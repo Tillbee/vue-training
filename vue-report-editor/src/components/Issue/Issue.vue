@@ -19,8 +19,7 @@
     export default {
         data(){
             return{
-                isSelected: false,
-                processing: false
+                isSelected: false
             }
         },
         props: {
@@ -33,11 +32,9 @@
         },
         methods: {
             toggleSelect(issue) {
-                if(!event.target.classList.contains("issue-key") || !!this.processing){
-                    this.processing = true
+                if(!event.target.classList.contains("issue-key")){
                     this.$store.dispatch('issues/toggleSelectedIssue', issue).then((wasSelected) => {
                         this.isSelected = !wasSelected
-                        this.processing = false
                     })
                 }
             }

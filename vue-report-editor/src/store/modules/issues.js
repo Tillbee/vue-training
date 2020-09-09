@@ -5,7 +5,7 @@ const state = () => ({
   all: null,
   selectedIssues: [],
   customIssues: [],
-  baseHref: 'https://jira.criteois.com/browse/'
+  baseHref: 'https://jira.criteois.com/browse/',
 })
 
 // getters
@@ -62,7 +62,7 @@ const mutations = {
   },
   removeAllCustomIssue (state) {
     state.customIssues = []
-  }
+  },
 }
 
 export default {

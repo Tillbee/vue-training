@@ -70,6 +70,7 @@
 
 <style lang="scss" scoped>
     .issues-background{
+        position: relative;
         background: #f4f5f7;
         padding: 5px 0px;
     }
