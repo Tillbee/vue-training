@@ -2,7 +2,7 @@
    <div class="col-sm-4 col-md-4 col-lg-2 col-2" @click="selectWorker(worker)">
        <div class="row">
            <div class="col-12">
-               <img class="img-fluid" :src="require(`../../assets/${worker.avatar}`)" :alt="worker.alt">
+               <img class="img-fluid" :src="require(`@/assets/${worker.avatar}`)" :title="worker.title" :alt="worker.firstName">
            </div>
        </div>     
    </div>
