@@ -1,7 +1,7 @@
 <template>
   <div class="mainContainer">
     <div class="row content align-items-center justify-content-center">
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <div class="row pl-2 pr-2 pt-2 pb-2">
           <div class="col">
             <transition name="slide" mode="out-in">

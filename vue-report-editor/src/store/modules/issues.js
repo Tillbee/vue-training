@@ -4,7 +4,6 @@ import issues from '@/database/issues';
 const state = () => ({
   all: null,
   selectedIssues: [],
-  customIssues: [],
   baseHref: 'https://jira.criteois.com/browse/',
 })
 
@@ -29,7 +28,9 @@ const actions = {
   toggleSelectedIssue ({commit, state, getters}, issue) {
     let wasSelected = getters.getSelectedIssueByKey(issue.key).length > 0
     !wasSelected ? commit('addSelectedIssue', issue) : commit('removeSelectedIssue', issue)
-    return wasSelected
+  },
+  resetSelectedIssues ({commit}) {
+    commit('resetSelectedIssues')
   },
 }
 
@@ -44,6 +45,9 @@ const mutations = {
   removeSelectedIssue (state, issue) {
     let selectedIssueIndex = state.selectedIssues.indexOf(issue);
     state.selectedIssues.splice(selectedIssueIndex, 1);
+  },
+  resetSelectedIssues (state) {
+    state.selectedIssues = []
   },
 }
 

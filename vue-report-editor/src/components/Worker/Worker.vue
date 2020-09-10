@@ -17,6 +17,11 @@
         },
         methods: {
             selectWorker(worker){
+                if(this.$store.state.workers.selected !== worker){
+                    this.$store.dispatch('issues/resetSelectedIssues')
+                    this.$store.dispatch('report/resetFeebacks')
+                    this.$store.dispatch('report/cleanErrors')
+                }
                 this.$store.dispatch('workers/selectWorker', worker)
                 this.$router.push('transition');
             }

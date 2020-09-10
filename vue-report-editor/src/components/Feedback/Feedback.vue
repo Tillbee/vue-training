@@ -4,7 +4,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="highlights">Your <span>Highlights</span> :</label>
-                    <textarea class="form-control" :class="{'is-invalid': highLightHasError}" id="highlights" rows="3" placeholder="e.g: The presence of Quentin" v-model="highLight" required></textarea>
+                    <textarea class="form-control" :class="{'is-invalid': highLightHasError}" id="highlights" rows="3" placeholder="e.g: The presence of Philippe" v-model="highLight" required></textarea>
                     <div class="invalid-feedback">
                         Please provide your highlights.
                     </div>
@@ -16,7 +16,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="lowlights">Your <span>Lowlights</span> :</label>
-                    <textarea class="form-control" :class="{'is-invalid': lowLightHasError}" id="lowlights" rows="3" placeholder="e.g: I miss Quentin" v-model="lowLight" required></textarea>
+                    <textarea class="form-control" :class="{'is-invalid': lowLightHasError}" id="lowlights" rows="3" placeholder="e.g: I miss Philippe" v-model="lowLight" required></textarea>
                     <div class="invalid-feedback">
                         Please provide your lowlights.
                     </div>

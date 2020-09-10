@@ -34,6 +34,9 @@ const actions = {
   cleanErrors ({commit}) {
     commit('cleanErrors')
   },
+  resetFeebacks ({commit}) {
+    commit('resetFeebacks')
+  },
 }
 
 // mutations
@@ -49,6 +52,10 @@ const mutations = {
   },
   cleanErrors (state) {
     state.errors = []
+  },
+  resetFeebacks (state) {
+    state.highLight = null
+    state.lowLight = null
   },
 }
 

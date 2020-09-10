@@ -29,7 +29,6 @@
             })
         },
         created () {
-            this.$store.dispatch('workers/resetSelectedWorker')
             this.$store.dispatch('workers/getAllWorkers')
         }
     }

@@ -17,25 +17,22 @@
 
 <script>
     export default {
-        data(){
-            return{
-                isSelected: false
-            }
-        },
+       
         props: {
             issue: Object
         },
         computed: {
             issueHref(){
                 return this.$store.state.issues.baseHref + this.issue.key
+            },
+            isSelected(){
+                return this.$store.getters['issues/getSelectedIssueByKey'](this.issue.key).length > 0
             }
         },
         methods: {
             toggleSelect(issue) {
                 if(!event.target.classList.contains("issue-key")){
-                    this.$store.dispatch('issues/toggleSelectedIssue', issue).then((wasSelected) => {
-                        this.isSelected = !wasSelected
-                    })
+                    this.$store.dispatch('issues/toggleSelectedIssue', issue)
                 }
             }
         }
